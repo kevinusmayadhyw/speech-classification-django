@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<!-- plugin css -->
+<link href="{% static 'libs/jquery-vectormap/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
+
+<div class="content-page">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+
+            {% include "base_page_title.html" %}
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title">Member Tugas 2</h4>
+                            <p></p>
+                            <table id="state-saving-datatable" class="table activate-select dt-responsive nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <!-- <th>Aplicant Name</th> -->
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+
+                                        <!--<th>Full Text</th>-->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1301194011</th>
+                                        <th>Kevin</th>
+                                        <th>Usmayadhy Wijaya</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div> <!-- end card body-->
+                    </div> <!-- end card -->
+                </div><!-- end col-->
+            </div>
+            <!-- end row-->
+
+             
+            
+
+        </div> <!-- container -->
+
+    </div> <!-- content -->
+
+    {% include "base_footer.html" %}
+
+</div>
+
+<!-- ============================================================== -->
+<!-- End Page content -->
+<!-- ============================================================== -->
+
+{% endblock %}
+
+{% block js %}
+
+<!-- Plugins js-->
+<script src="{% static 'libs/jquery-sparkline/jquery.sparkline.min.js' %}"></script>
+<script src="{% static 'libs/jquery-vectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+<script src="{% static 'libs/jquery-vectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+
+<!-- Dashboard 2 init -->
+<script src="{% static 'js/pages/dashboard-2.init.js' %}"></script>
+
+{% endblock %}
