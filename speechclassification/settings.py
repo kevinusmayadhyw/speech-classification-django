@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'audio.apps.AudioConfig',
     'transcribe.apps.TranscribeConfig',
     'grade.apps.GradeConfig',
+    'tugastiga_1301194011.apps.Tugastiga1301194011Config',
     'django_extensions',
 ]
 

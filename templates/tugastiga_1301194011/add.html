@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
+
+<div class="content-page">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+
+            {% include "base_page_title.html" %}
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form method="POST" action="{% url 'tugastiga_1301194011:save' %}">
+                                        {% csrf_token %}
+
+                                        <input type="hidden" id="id" name="id" value="{{ tugastiga_1301194011.id }}">
+
+                                        <div class="form-group row">
+                                            <label for="inputEmail3" class="col-4 col-form-label">Name</label>
+                                            <div class="col-7">
+                                                <input type="text" name="name"
+                                                    required="" parsley-type="email"
+                                                    class="form-control parsley-success" id="inputEmail3"
+                                                    placeholder="ex: Dhani" data-parsley-id="40">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="inputEmail3" class="col-4 col-form-label">Message</label>
+                                            <div class="col-7">
+                                                <textarea class="form-control parsley-success" id="example-textarea"
+                                                placeholder="ex: Hello, how are you?"
+                                                name="messages"
+                                                rows="10"
+                                                required=""></textarea>
+                                            </div>
+                                        </div>
+
+                                        <ul class="list-inline wizard mt-3">
+                                            <li class="previous list-inline-item">
+                                                <a href="{% url 'tugastiga_1301194011:index' %}">
+                                                    <button type="button" class="ladda-button btn btn-info"
+                                                        data-style="slide-right"><i
+                                                            class="mdi mdi-backspace-outline"></i> Back
+                                                    </button>
+                                                </a>
+                                            </li>
+
+
+                                            <li class="next list-inline-item">
+
+                                                <button type="button" class="btn btn-success waves-effect waves-light"
+                                                    data-toggle="modal" data-style="slide-right"
+                                                    data-target=".bs-example-modal-center{{tugastiga_1301194011.id}}"><i
+                                                        class="mdi mdi-plus mr-1"></i> Add </button>
+                                                        
+                                                <div class="modal fade bs-example-modal-center{{tugastiga_1301194011.id}}" tabindex="-1"
+                                                    role="dialog" aria-labelledby="myCenterModalLabel"
+                                                    aria-hidden="true" style="display: none;">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" id="myCenterModalLabel">Are you
+                                                                    sure
+                                                                    to save?</h4>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-hidden="true">×</button>
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                <button type="button"
+                                                                    class="btn btn-secondary waves-effect"
+                                                                    data-dismiss="modal">Close</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-success waves-effect waves-light"
+                                                                        data-style="slide-right"><i
+                                                                            class="mdi mdi-content-save-outline"></i> Save</button>
+                                                            </div>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+
+                                            </li>
+                                        </ul>
+
+                                    </form>
+                                </div> <!-- end col -->
+
+                            </div>
+                            <!-- end row-->
+
+                        </div> <!-- end card-body -->
+                    </div> <!-- end card -->
+                </div><!-- end col -->
+            </div>
+            <!-- end row -->
+
+        </div> <!-- container -->
+
+    </div> <!-- content -->
+
+    {% include "base_footer.html" %}
+
+</div>
+
+<!-- ============================================================== -->
+<!-- End Page content -->
+<!-- ============================================================== -->
+
+{% endblock %}
