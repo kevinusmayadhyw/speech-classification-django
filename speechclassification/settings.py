@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'transcribe.apps.TranscribeConfig',
     'grade.apps.GradeConfig',
     'tugastiga_1301194011.apps.Tugastiga1301194011Config',
+    't6_dashboard.apps.T6DashboardConfig',
     'django_extensions',
 ]
 

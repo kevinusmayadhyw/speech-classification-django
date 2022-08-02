@@ -179,115 +179,30 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            {% for user in user_list %}
                                             <tr>
                                                 <td>
-                                                    1
+                                                    {{forloop.counter}}
                                                 </td>
 
                                                 <td>
-                                                    Abdul Murhandiasyah
+                                                    {{user.fullname}}
                                                 </td>
 
                                                 <td>
-                                                    Marketing
+                                                    {{user.department}}
                                                 </td>
 
                                                 <td>
-                                                    Area Marketing division
+                                                    {{user.division}}
                                                 </td>
 
                                                 <td>
-                                                    200
+                                                    {{user.point}}
                                                 </td>
                                             </tr>
 
-                                            <tr>
-                                                <td>
-                                                    2
-                                                </td>
-
-                                                <td>
-                                                    Abdul Murhandiasyah
-                                                </td>
-
-                                                <td>
-                                                    Marketing
-                                                </td>
-
-                                                <td>
-                                                    Area Marketing division
-                                                </td>
-
-                                                <td>
-                                                    200
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                    3
-                                                </td>
-
-                                                <td>
-                                                    Abdul Murhandiasyah
-                                                </td>
-
-                                                <td>
-                                                    Marketing
-                                                </td>
-
-                                                <td>
-                                                    Area Marketing division
-                                                </td>
-
-                                                <td>
-                                                    200
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    4
-                                                </td>
-
-                                                <td>
-                                                    Abdul Murhandiasyah
-                                                </td>
-
-                                                <td>
-                                                    Marketing
-                                                </td>
-
-                                                <td>
-                                                    Area Marketing division
-                                                </td>
-
-                                                <td>
-                                                    200
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    5
-                                                </td>
-
-                                                <td>
-                                                    Abdul Murhandiasyah
-                                                </td>
-
-                                                <td>
-                                                    Marketing
-                                                </td>
-
-                                                <td>
-                                                    Area Marketing division
-                                                </td>
-
-                                                <td>
-                                                    200
-                                                </td>
-                                            </tr>
-                                            </tr>
-
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
