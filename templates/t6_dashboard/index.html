@@ -82,7 +82,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
-                                            <h3 class="mt-1">500</h3>
+                                            <h3 class="mt-1">{{user_list|length}}</h3>
                                             <p class="text-muted mb-1 text-truncate">Total Users</p>
                                         </div>
                                     </div>
@@ -100,7 +100,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
-                                            <h3 class="mt-1"><span data-plugin="counterup">10</span></h3>
+                                            <h3 class="mt-1"><span data-plugin="counterup">{{count_department}}</span></h3>
                                             <p class="text-muted mb-1 text-truncate">Total Department</p>
                                         </div>
                                     </div>
@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="text-right">
-                                            <h3 class="mt-1"><span data-plugin="counterup">50</h3>
+                                            <h3 class="mt-1"><span data-plugin="counterup">{{division_list|length}}</h3>
                                             <p class="text-muted mb-1 text-truncate">Total Division</p>
                                         </div>
                                     </div>
@@ -135,23 +135,24 @@
 
                                 <div class="widget-chart text-center" dir="auto">
                                     <input data-plugin="knob" data-width="160" data-height="160" data-linecap=round
-                                        data-bgColor="#525e6b" data-fgColor="#f1556c" value="50" data-skin="tron"
-                                        data-angleOffset="180" data-readOnly=true data-thickness=".12" />
+                                        data-bgColor="#525e6b" data-fgColor="#f1556c" value={{percent}} data-skin="tron"
+                                        data-readOnly=true data-thickness=".12" />
                                     <h5 class="text-muted mt-3">Total point made today</h5>
-                                    <h2>100</h2>
+                                    <h2>{{ point_sum }}</h2>
 
+                                    
                                     <div class="row mt-3">
                                         <div class="col-4">
                                             <p class="text-muted font-15 mb-1 text-truncate">Last week</p>
-                                            <h4>1000</h4>
+                                            <h4>{{point_list.0.point}}</h4>
                                         </div>
                                         <div class="col-4">
-                                            <p class="text-muted font-15 mb-1 text-truncate">Yesterday</p>
-                                            <h4>150</h4>
+                                            <p class="text-muted font-15 mb-1 text-truncate">This week</p>
+                                            <h4>{{point_list.1.point}}</h4>
                                         </div>
                                         <div class="col-4">
-                                            <p class="text-muted font-15 mb-1 text-truncate">Target</p>
-                                            <h4>200</h4>
+                                            <p class="text-muted font-15 mb-1 text-truncate">Target today</p>
+                                            <h4> {{target}}</h4>
                                         </div>
                                     </div>
 
@@ -179,7 +180,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {% for user in user_list %}
+                                            {% for user in user_list|slice:":5" %}
                                             <tr>
                                                 <td>
                                                     {{forloop.counter}}
